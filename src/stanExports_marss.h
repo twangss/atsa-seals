@@ -75,51 +75,59 @@ using stan::math::pow;
 stan::math::profile_map profiles__;
 static int current_statement__= 0;
 static const std::vector<string> locations_array__ = {" (found before start of program)",
-                                                      " (in 'marss', line 24, column 2 to column 15)",
-                                                      " (in 'marss', line 25, column 2 to column 43)",
-                                                      " (in 'marss', line 27, column 2 to column 21)",
-                                                      " (in 'marss', line 29, column 2 to column 16)",
-                                                      " (in 'marss', line 30, column 2 to column 33)",
-                                                      " (in 'marss', line 31, column 2 to column 36)",
-                                                      " (in 'marss', line 34, column 2 to column 20)",
-                                                      " (in 'marss', line 35, column 2 to column 17)",
-                                                      " (in 'marss', line 38, column 2 to column 17)",
-                                                      " (in 'marss', line 39, column 2 to column 17)",
-                                                      " (in 'marss', line 41, column 16 to column 28)",
-                                                      " (in 'marss', line 41, column 2 to column 28)",
-                                                      " (in 'marss', line 42, column 18 to column 40)",
-                                                      " (in 'marss', line 42, column 2 to column 40)",
-                                                      " (in 'marss', line 46, column 6 to column 29)",
-                                                      " (in 'marss', line 44, column 16 to line 50, column 3)",
-                                                      " (in 'marss', line 44, column 2 to line 50, column 3)",
-                                                      " (in 'marss', line 62, column 17 to column 32)",
-                                                      " (in 'marss', line 62, column 16 to column 33)",
-                                                      " (in 'marss', line 62, column 2 to column 33)",
-                                                      " (in 'marss', line 67, column 4 to column 82)",
-                                                      " (in 'marss', line 64, column 18 to line 71, column 5)",
-                                                      " (in 'marss', line 64, column 4 to line 71, column 5)",
-                                                      " (in 'marss', line 63, column 16 to line 72, column 3)",
-                                                      " (in 'marss', line 63, column 2 to line 72, column 3)",
-                                                      " (in 'marss', line 76, column 6 to column 43)",
-                                                      " (in 'marss', line 75, column 18 to line 77, column 5)",
-                                                      " (in 'marss', line 75, column 4 to line 77, column 5)",
-                                                      " (in 'marss', line 74, column 16 to line 78, column 3)",
-                                                      " (in 'marss', line 74, column 2 to line 78, column 3)",
-                                                      " (in 'marss', line 85, column 4 to column 31)",
-                                                      " (in 'marss', line 84, column 23 to line 86, column 3)",
-                                                      " (in 'marss', line 84, column 2 to line 86, column 3)",
-                                                      " (in 'marss', line 88, column 4 to column 35)",
-                                                      " (in 'marss', line 87, column 23 to line 89, column 3)",
-                                                      " (in 'marss', line 87, column 2 to line 89, column 3)",
-                                                      " (in 'marss', line 92, column 6 to column 27)",
-                                                      " (in 'marss', line 91, column 25 to line 93, column 5)",
-                                                      " (in 'marss', line 91, column 4 to line 93, column 5)",
-                                                      " (in 'marss', line 96, column 4 to column 30)",
-                                                      " (in 'marss', line 95, column 16 to line 97, column 3)",
-                                                      " (in 'marss', line 95, column 2 to line 97, column 3)",
-                                                      " (in 'marss', line 111, column 4 to column 100)",
-                                                      " (in 'marss', line 110, column 20 to line 117, column 3)",
-                                                      " (in 'marss', line 110, column 2 to line 117, column 3)",
+                                                      " (in 'marss', line 25, column 2 to column 15)",
+                                                      " (in 'marss', line 26, column 2 to column 29)",
+                                                      " (in 'marss', line 27, column 2 to column 43)",
+                                                      " (in 'marss', line 29, column 2 to column 21)",
+                                                      " (in 'marss', line 31, column 2 to column 16)",
+                                                      " (in 'marss', line 32, column 2 to column 33)",
+                                                      " (in 'marss', line 33, column 2 to column 36)",
+                                                      " (in 'marss', line 36, column 2 to column 20)",
+                                                      " (in 'marss', line 37, column 2 to column 17)",
+                                                      " (in 'marss', line 40, column 2 to column 17)",
+                                                      " (in 'marss', line 41, column 2 to column 17)",
+                                                      " (in 'marss', line 43, column 16 to column 28)",
+                                                      " (in 'marss', line 43, column 2 to column 28)",
+                                                      " (in 'marss', line 44, column 18 to column 40)",
+                                                      " (in 'marss', line 44, column 2 to column 40)",
+                                                      " (in 'marss', line 48, column 6 to column 29)",
+                                                      " (in 'marss', line 46, column 16 to line 52, column 3)",
+                                                      " (in 'marss', line 46, column 2 to line 52, column 3)",
+                                                      " (in 'marss', line 64, column 17 to column 32)",
+                                                      " (in 'marss', line 64, column 16 to column 33)",
+                                                      " (in 'marss', line 64, column 2 to column 33)",
+                                                      " (in 'marss', line 69, column 4 to column 82)",
+                                                      " (in 'marss', line 66, column 18 to line 73, column 5)",
+                                                      " (in 'marss', line 66, column 4 to line 73, column 5)",
+                                                      " (in 'marss', line 65, column 16 to line 74, column 3)",
+                                                      " (in 'marss', line 65, column 2 to line 74, column 3)",
+                                                      " (in 'marss', line 78, column 6 to column 43)",
+                                                      " (in 'marss', line 77, column 18 to line 79, column 5)",
+                                                      " (in 'marss', line 77, column 4 to line 79, column 5)",
+                                                      " (in 'marss', line 76, column 16 to line 80, column 3)",
+                                                      " (in 'marss', line 76, column 2 to line 80, column 3)",
+                                                      " (in 'marss', line 87, column 4 to column 31)",
+                                                      " (in 'marss', line 86, column 23 to line 88, column 3)",
+                                                      " (in 'marss', line 86, column 2 to line 88, column 3)",
+                                                      " (in 'marss', line 90, column 4 to column 35)",
+                                                      " (in 'marss', line 89, column 23 to line 91, column 3)",
+                                                      " (in 'marss', line 89, column 2 to line 91, column 3)",
+                                                      " (in 'marss', line 94, column 6 to column 27)",
+                                                      " (in 'marss', line 93, column 25 to line 95, column 5)",
+                                                      " (in 'marss', line 93, column 4 to line 95, column 5)",
+                                                      " (in 'marss', line 105, column 6 to column 32)",
+                                                      " (in 'marss', line 104, column 18 to line 106, column 5)",
+                                                      " (in 'marss', line 104, column 4 to line 106, column 5)",
+                                                      " (in 'marss', line 103, column 9 to line 107, column 3)",
+                                                      " (in 'marss', line 99, column 4 to column 26)",
+                                                      " (in 'marss', line 101, column 6 to column 42)",
+                                                      " (in 'marss', line 100, column 18 to line 102, column 5)",
+                                                      " (in 'marss', line 100, column 4 to line 102, column 5)",
+                                                      " (in 'marss', line 98, column 17 to line 103, column 3)",
+                                                      " (in 'marss', line 98, column 2 to line 107, column 3)",
+                                                      " (in 'marss', line 122, column 4 to column 100)",
+                                                      " (in 'marss', line 121, column 20 to line 128, column 3)",
+                                                      " (in 'marss', line 121, column 2 to line 128, column 3)",
                                                       " (in 'marss', line 2, column 2 to column 17)",
                                                       " (in 'marss', line 3, column 2 to column 17)",
                                                       " (in 'marss', line 4, column 22 to column 23)",
@@ -140,24 +148,26 @@ static const std::vector<string> locations_array__ = {" (found before start of p
                                                       " (in 'marss', line 14, column 28 to column 33)",
                                                       " (in 'marss', line 14, column 2 to column 35)",
                                                       " (in 'marss', line 17, column 2 to column 19)",
-                                                      " (in 'marss', line 18, column 21 to column 26)",
-                                                      " (in 'marss', line 18, column 2 to column 28)",
-                                                      " (in 'marss', line 19, column 9 to column 14)",
-                                                      " (in 'marss', line 19, column 2 to column 18)",
-                                                      " (in 'marss', line 21, column 2 to column 13)",
-                                                      " (in 'marss', line 24, column 9 to column 10)",
-                                                      " (in 'marss', line 25, column 38 to column 41)",
-                                                      " (in 'marss', line 25, column 27 to column 28)",
-                                                      " (in 'marss', line 27, column 9 to column 17)",
-                                                      " (in 'marss', line 29, column 9 to column 12)",
-                                                      " (in 'marss', line 30, column 30 to column 31)",
-                                                      " (in 'marss', line 31, column 26 to column 34)",
-                                                      " (in 'marss', line 34, column 17 to column 18)",
-                                                      " (in 'marss', line 34, column 9 to column 10)",
-                                                      " (in 'marss', line 35, column 14 to column 15)",
-                                                      " (in 'marss', line 35, column 9 to column 10)",
-                                                      " (in 'marss', line 38, column 9 to column 10)",
-                                                      " (in 'marss', line 39, column 9 to column 10)"};
+                                                      " (in 'marss', line 18, column 2 to column 22)",
+                                                      " (in 'marss', line 19, column 21 to column 26)",
+                                                      " (in 'marss', line 19, column 2 to column 28)",
+                                                      " (in 'marss', line 20, column 9 to column 14)",
+                                                      " (in 'marss', line 20, column 2 to column 18)",
+                                                      " (in 'marss', line 22, column 2 to column 13)",
+                                                      " (in 'marss', line 25, column 9 to column 10)",
+                                                      " (in 'marss', line 26, column 18 to column 24)",
+                                                      " (in 'marss', line 27, column 38 to column 41)",
+                                                      " (in 'marss', line 27, column 27 to column 28)",
+                                                      " (in 'marss', line 29, column 9 to column 17)",
+                                                      " (in 'marss', line 31, column 9 to column 12)",
+                                                      " (in 'marss', line 32, column 30 to column 31)",
+                                                      " (in 'marss', line 33, column 26 to column 34)",
+                                                      " (in 'marss', line 36, column 17 to column 18)",
+                                                      " (in 'marss', line 36, column 9 to column 10)",
+                                                      " (in 'marss', line 37, column 14 to column 15)",
+                                                      " (in 'marss', line 37, column 9 to column 10)",
+                                                      " (in 'marss', line 40, column 9 to column 10)",
+                                                      " (in 'marss', line 41, column 9 to column 10)"};
 #include <stan_meta_header.hpp>
 class model_marss final : public model_base_crtp<model_marss> {
 private:
@@ -175,6 +185,7 @@ private:
   std::vector<int> col_indx_pos;
   std::vector<int> row_indx_pos;
   int n_A;
+  int est_nu;
   std::vector<int> est_A;
   Eigen::Matrix<double, -1, 1> y;
   int family;
@@ -206,201 +217,211 @@ public:
       pos__ = std::numeric_limits<int>::min();
       
       pos__ = 1;
-      current_statement__ = 46;
+      current_statement__ = 54;
       context__.validate_dims("data initialization","N","int",
           context__.to_vec());
       N = std::numeric_limits<int>::min();
       
-      current_statement__ = 46;
+      current_statement__ = 54;
       N = context__.vals_i("N")[(1 - 1)];
-      current_statement__ = 46;
-      current_statement__ = 46;
+      current_statement__ = 54;
+      current_statement__ = 54;
       check_greater_or_equal(function__, "N", N, 0);
-      current_statement__ = 47;
+      current_statement__ = 55;
       context__.validate_dims("data initialization","M","int",
           context__.to_vec());
       M = std::numeric_limits<int>::min();
       
-      current_statement__ = 47;
+      current_statement__ = 55;
       M = context__.vals_i("M")[(1 - 1)];
-      current_statement__ = 47;
-      current_statement__ = 47;
+      current_statement__ = 55;
+      current_statement__ = 55;
       check_greater_or_equal(function__, "M", M, 0);
-      current_statement__ = 48;
+      current_statement__ = 56;
       validate_non_negative_index("states", "M", M);
-      current_statement__ = 49;
+      current_statement__ = 57;
       context__.validate_dims("data initialization","states","int",
           context__.to_vec(M));
       states = std::vector<int>(M, std::numeric_limits<int>::min());
       
-      current_statement__ = 49;
+      current_statement__ = 57;
       assign(states, nil_index_list(), context__.vals_i("states"),
         "assigning variable states");
-      current_statement__ = 49;
+      current_statement__ = 57;
       for (int sym1__ = 1; sym1__ <= M; ++sym1__) {
-        current_statement__ = 49;
-        current_statement__ = 49;
+        current_statement__ = 57;
+        current_statement__ = 57;
         check_greater_or_equal(function__, "states[sym1__]",
                                states[(sym1__ - 1)], 0);}
-      current_statement__ = 50;
+      current_statement__ = 58;
       context__.validate_dims("data initialization","S","int",
           context__.to_vec());
       S = std::numeric_limits<int>::min();
       
-      current_statement__ = 50;
+      current_statement__ = 58;
       S = context__.vals_i("S")[(1 - 1)];
-      current_statement__ = 50;
-      current_statement__ = 50;
+      current_statement__ = 58;
+      current_statement__ = 58;
       check_greater_or_equal(function__, "S", S, 0);
-      current_statement__ = 51;
+      current_statement__ = 59;
       validate_non_negative_index("obsVariances", "M", M);
-      current_statement__ = 52;
+      current_statement__ = 60;
       context__.validate_dims("data initialization","obsVariances","int",
           context__.to_vec(M));
       obsVariances = std::vector<int>(M, std::numeric_limits<int>::min());
       
-      current_statement__ = 52;
+      current_statement__ = 60;
       assign(obsVariances, nil_index_list(),
         context__.vals_i("obsVariances"), "assigning variable obsVariances");
-      current_statement__ = 52;
+      current_statement__ = 60;
       for (int sym1__ = 1; sym1__ <= M; ++sym1__) {
-        current_statement__ = 52;
-        current_statement__ = 52;
+        current_statement__ = 60;
+        current_statement__ = 60;
         check_greater_or_equal(function__, "obsVariances[sym1__]",
                                obsVariances[(sym1__ - 1)], 0);}
-      current_statement__ = 53;
+      current_statement__ = 61;
       context__.validate_dims("data initialization","n_obsvar","int",
           context__.to_vec());
       n_obsvar = std::numeric_limits<int>::min();
       
-      current_statement__ = 53;
+      current_statement__ = 61;
       n_obsvar = context__.vals_i("n_obsvar")[(1 - 1)];
-      current_statement__ = 53;
-      current_statement__ = 53;
+      current_statement__ = 61;
+      current_statement__ = 61;
       check_greater_or_equal(function__, "n_obsvar", n_obsvar, 0);
-      current_statement__ = 54;
+      current_statement__ = 62;
       validate_non_negative_index("proVariances", "S + 1", (S + 1));
-      current_statement__ = 55;
+      current_statement__ = 63;
       context__.validate_dims("data initialization","proVariances","int",
           context__.to_vec((S + 1)));
       proVariances = std::vector<int>((S + 1), std::numeric_limits<int>::min());
       
-      current_statement__ = 55;
+      current_statement__ = 63;
       assign(proVariances, nil_index_list(),
         context__.vals_i("proVariances"), "assigning variable proVariances");
-      current_statement__ = 55;
+      current_statement__ = 63;
       for (int sym1__ = 1; sym1__ <= (S + 1); ++sym1__) {
-        current_statement__ = 55;
-        current_statement__ = 55;
+        current_statement__ = 63;
+        current_statement__ = 63;
         check_greater_or_equal(function__, "proVariances[sym1__]",
                                proVariances[(sym1__ - 1)], 0);}
-      current_statement__ = 56;
+      current_statement__ = 64;
       context__.validate_dims("data initialization","n_provar","int",
           context__.to_vec());
       n_provar = std::numeric_limits<int>::min();
       
-      current_statement__ = 56;
+      current_statement__ = 64;
       n_provar = context__.vals_i("n_provar")[(1 - 1)];
-      current_statement__ = 56;
-      current_statement__ = 56;
+      current_statement__ = 64;
+      current_statement__ = 64;
       check_greater_or_equal(function__, "n_provar", n_provar, 0);
-      current_statement__ = 57;
+      current_statement__ = 65;
       validate_non_negative_index("trends", "S + 1", (S + 1));
-      current_statement__ = 58;
+      current_statement__ = 66;
       context__.validate_dims("data initialization","trends","int",
           context__.to_vec((S + 1)));
       trends = std::vector<int>((S + 1), std::numeric_limits<int>::min());
       
-      current_statement__ = 58;
+      current_statement__ = 66;
       assign(trends, nil_index_list(), context__.vals_i("trends"),
         "assigning variable trends");
-      current_statement__ = 58;
+      current_statement__ = 66;
       for (int sym1__ = 1; sym1__ <= (S + 1); ++sym1__) {
-        current_statement__ = 58;
-        current_statement__ = 58;
+        current_statement__ = 66;
+        current_statement__ = 66;
         check_greater_or_equal(function__, "trends[sym1__]",
                                trends[(sym1__ - 1)], 0);}
-      current_statement__ = 59;
+      current_statement__ = 67;
       context__.validate_dims("data initialization","n_trends","int",
           context__.to_vec());
       n_trends = std::numeric_limits<int>::min();
       
-      current_statement__ = 59;
+      current_statement__ = 67;
       n_trends = context__.vals_i("n_trends")[(1 - 1)];
-      current_statement__ = 59;
-      current_statement__ = 59;
+      current_statement__ = 67;
+      current_statement__ = 67;
       check_greater_or_equal(function__, "n_trends", n_trends, 0);
-      current_statement__ = 60;
+      current_statement__ = 68;
       context__.validate_dims("data initialization","n_pos","int",
           context__.to_vec());
       n_pos = std::numeric_limits<int>::min();
       
-      current_statement__ = 60;
+      current_statement__ = 68;
       n_pos = context__.vals_i("n_pos")[(1 - 1)];
-      current_statement__ = 60;
-      current_statement__ = 60;
+      current_statement__ = 68;
+      current_statement__ = 68;
       check_greater_or_equal(function__, "n_pos", n_pos, 0);
-      current_statement__ = 61;
+      current_statement__ = 69;
       validate_non_negative_index("col_indx_pos", "n_pos", n_pos);
-      current_statement__ = 62;
+      current_statement__ = 70;
       context__.validate_dims("data initialization","col_indx_pos","int",
           context__.to_vec(n_pos));
       col_indx_pos = std::vector<int>(n_pos, std::numeric_limits<int>::min());
       
-      current_statement__ = 62;
+      current_statement__ = 70;
       assign(col_indx_pos, nil_index_list(),
         context__.vals_i("col_indx_pos"), "assigning variable col_indx_pos");
-      current_statement__ = 62;
+      current_statement__ = 70;
       for (int sym1__ = 1; sym1__ <= n_pos; ++sym1__) {
-        current_statement__ = 62;
-        current_statement__ = 62;
+        current_statement__ = 70;
+        current_statement__ = 70;
         check_greater_or_equal(function__, "col_indx_pos[sym1__]",
                                col_indx_pos[(sym1__ - 1)], 0);}
-      current_statement__ = 63;
+      current_statement__ = 71;
       validate_non_negative_index("row_indx_pos", "n_pos", n_pos);
-      current_statement__ = 64;
+      current_statement__ = 72;
       context__.validate_dims("data initialization","row_indx_pos","int",
           context__.to_vec(n_pos));
       row_indx_pos = std::vector<int>(n_pos, std::numeric_limits<int>::min());
       
-      current_statement__ = 64;
+      current_statement__ = 72;
       assign(row_indx_pos, nil_index_list(),
         context__.vals_i("row_indx_pos"), "assigning variable row_indx_pos");
-      current_statement__ = 64;
+      current_statement__ = 72;
       for (int sym1__ = 1; sym1__ <= n_pos; ++sym1__) {
-        current_statement__ = 64;
-        current_statement__ = 64;
+        current_statement__ = 72;
+        current_statement__ = 72;
         check_greater_or_equal(function__, "row_indx_pos[sym1__]",
                                row_indx_pos[(sym1__ - 1)], 0);}
-      current_statement__ = 65;
+      current_statement__ = 73;
       context__.validate_dims("data initialization","n_A","int",
           context__.to_vec());
       n_A = std::numeric_limits<int>::min();
       
-      current_statement__ = 65;
+      current_statement__ = 73;
       n_A = context__.vals_i("n_A")[(1 - 1)];
-      current_statement__ = 65;
-      current_statement__ = 65;
+      current_statement__ = 73;
+      current_statement__ = 73;
       check_greater_or_equal(function__, "n_A", n_A, 0);
-      current_statement__ = 66;
+      current_statement__ = 74;
+      context__.validate_dims("data initialization","est_nu","int",
+          context__.to_vec());
+      est_nu = std::numeric_limits<int>::min();
+      
+      current_statement__ = 74;
+      est_nu = context__.vals_i("est_nu")[(1 - 1)];
+      current_statement__ = 74;
+      current_statement__ = 74;
+      check_greater_or_equal(function__, "est_nu", est_nu, 0);
+      current_statement__ = 75;
       validate_non_negative_index("est_A", "n_A + 2", (n_A + 2));
-      current_statement__ = 67;
+      current_statement__ = 76;
       context__.validate_dims("data initialization","est_A","int",
           context__.to_vec((n_A + 2)));
       est_A = std::vector<int>((n_A + 2), std::numeric_limits<int>::min());
       
-      current_statement__ = 67;
+      current_statement__ = 76;
       assign(est_A, nil_index_list(), context__.vals_i("est_A"),
         "assigning variable est_A");
-      current_statement__ = 67;
+      current_statement__ = 76;
       for (int sym1__ = 1; sym1__ <= (n_A + 2); ++sym1__) {
-        current_statement__ = 67;
-        current_statement__ = 67;
+        current_statement__ = 76;
+        current_statement__ = 76;
         check_greater_or_equal(function__, "est_A[sym1__]",
                                est_A[(sym1__ - 1)], 0);}
-      current_statement__ = 68;
+      current_statement__ = 77;
       validate_non_negative_index("y", "n_pos", n_pos);
-      current_statement__ = 69;
+      current_statement__ = 78;
       context__.validate_dims("data initialization","y","double",
           context__.to_vec(n_pos));
       y = Eigen::Matrix<double, -1, 1>(n_pos);
@@ -408,56 +429,58 @@ public:
       
       {
         std::vector<local_scalar_t__> y_flat__;
-        current_statement__ = 69;
+        current_statement__ = 78;
         assign(y_flat__, nil_index_list(), context__.vals_r("y"),
           "assigning variable y_flat__");
-        current_statement__ = 69;
+        current_statement__ = 78;
         pos__ = 1;
-        current_statement__ = 69;
+        current_statement__ = 78;
         for (int sym1__ = 1; sym1__ <= n_pos; ++sym1__) {
-          current_statement__ = 69;
+          current_statement__ = 78;
           assign(y, cons_list(index_uni(sym1__), nil_index_list()),
             y_flat__[(pos__ - 1)], "assigning variable y");
-          current_statement__ = 69;
+          current_statement__ = 78;
           pos__ = (pos__ + 1);}
       }
-      current_statement__ = 70;
+      current_statement__ = 79;
       context__.validate_dims("data initialization","family","int",
           context__.to_vec());
       family = std::numeric_limits<int>::min();
       
-      current_statement__ = 70;
+      current_statement__ = 79;
       family = context__.vals_i("family")[(1 - 1)];
-      current_statement__ = 71;
+      current_statement__ = 80;
       validate_non_negative_index("x0", "S", S);
-      current_statement__ = 72;
+      current_statement__ = 81;
+      validate_non_negative_index("nu", "est_nu", est_nu);
+      current_statement__ = 82;
       pro_dev_1dim__ = std::numeric_limits<int>::min();
       
-      current_statement__ = 72;
-      pro_dev_1dim__ = (N - 1);
-      current_statement__ = 72;
-      validate_non_negative_index("pro_dev", "N - 1", pro_dev_1dim__);
-      current_statement__ = 73;
-      validate_non_negative_index("pro_dev", "S", S);
-      current_statement__ = 74;
-      validate_non_negative_index("U", "n_trends", n_trends);
-      current_statement__ = 75;
-      validate_non_negative_index("A", "n_A", n_A);
-      current_statement__ = 76;
-      validate_non_negative_index("sigma_process", "S", S);
-      current_statement__ = 77;
-      validate_non_negative_index("sigma_obs", "n_obsvar", n_obsvar);
-      current_statement__ = 78;
-      validate_non_negative_index("pred", "N", N);
-      current_statement__ = 79;
-      validate_non_negative_index("pred", "M", M);
-      current_statement__ = 80;
-      validate_non_negative_index("x", "N", N);
-      current_statement__ = 81;
-      validate_non_negative_index("x", "S", S);
       current_statement__ = 82;
-      validate_non_negative_index("Uvec", "S", S);
+      pro_dev_1dim__ = (N - 1);
+      current_statement__ = 82;
+      validate_non_negative_index("pro_dev", "N - 1", pro_dev_1dim__);
       current_statement__ = 83;
+      validate_non_negative_index("pro_dev", "S", S);
+      current_statement__ = 84;
+      validate_non_negative_index("U", "n_trends", n_trends);
+      current_statement__ = 85;
+      validate_non_negative_index("A", "n_A", n_A);
+      current_statement__ = 86;
+      validate_non_negative_index("sigma_process", "S", S);
+      current_statement__ = 87;
+      validate_non_negative_index("sigma_obs", "n_obsvar", n_obsvar);
+      current_statement__ = 88;
+      validate_non_negative_index("pred", "N", N);
+      current_statement__ = 89;
+      validate_non_negative_index("pred", "M", M);
+      current_statement__ = 90;
+      validate_non_negative_index("x", "N", N);
+      current_statement__ = 91;
+      validate_non_negative_index("x", "S", S);
+      current_statement__ = 92;
+      validate_non_negative_index("Uvec", "S", S);
+      current_statement__ = 93;
       validate_non_negative_index("Avec", "M", M);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
@@ -468,6 +491,7 @@ public:
     
     try {
       num_params_r__ += S;
+      num_params_r__ += est_nu;
       num_params_r__ += pro_dev_1dim__ * S;
       num_params_r__ += n_trends;
       num_params_r__ += n_A;
@@ -500,29 +524,49 @@ public:
       
       current_statement__ = 1;
       x0 = in__.vector(S);
+      Eigen::Matrix<local_scalar_t__, -1, 1> nu;
+      nu = Eigen::Matrix<local_scalar_t__, -1, 1>(est_nu);
+      stan::math::fill(nu, DUMMY_VAR__);
+      
+      current_statement__ = 2;
+      nu = in__.vector(est_nu);
+      current_statement__ = 2;
+      for (int sym1__ = 1; sym1__ <= est_nu; ++sym1__) {
+        current_statement__ = 2;
+        if (jacobian__) {
+          current_statement__ = 2;
+          assign(nu, cons_list(index_uni(sym1__), nil_index_list()),
+            stan::math::lb_constrain(nu[(sym1__ - 1)], 2, lp__),
+            "assigning variable nu");
+        } else {
+          current_statement__ = 2;
+          assign(nu, cons_list(index_uni(sym1__), nil_index_list()),
+            stan::math::lb_constrain(nu[(sym1__ - 1)], 2),
+            "assigning variable nu");
+        }}
       std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>> pro_dev;
       pro_dev = std::vector<Eigen::Matrix<local_scalar_t__, -1, 1>>(pro_dev_1dim__, Eigen::Matrix<local_scalar_t__, -1, 1>(S));
       stan::math::fill(pro_dev, DUMMY_VAR__);
       
-      current_statement__ = 2;
+      current_statement__ = 3;
       for (int sym1__ = 1; sym1__ <= pro_dev_1dim__; ++sym1__) {
-        current_statement__ = 2;
+        current_statement__ = 3;
         assign(pro_dev, cons_list(index_uni(sym1__), nil_index_list()),
           in__.vector(S), "assigning variable pro_dev");}
-      current_statement__ = 2;
+      current_statement__ = 3;
       for (int sym1__ = 1; sym1__ <= pro_dev_1dim__; ++sym1__) {
-        current_statement__ = 2;
+        current_statement__ = 3;
         for (int sym2__ = 1; sym2__ <= S; ++sym2__) {
-          current_statement__ = 2;
+          current_statement__ = 3;
           if (jacobian__) {
-            current_statement__ = 2;
+            current_statement__ = 3;
             assign(pro_dev,
               cons_list(index_uni(sym1__),
                 cons_list(index_uni(sym2__), nil_index_list())),
               stan::math::lub_constrain(pro_dev[(sym1__ - 1)][(sym2__ - 1)],
                 -3, 3, lp__), "assigning variable pro_dev");
           } else {
-            current_statement__ = 2;
+            current_statement__ = 3;
             assign(pro_dev,
               cons_list(index_uni(sym1__),
                 cons_list(index_uni(sym2__), nil_index_list())),
@@ -533,33 +577,33 @@ public:
       U = Eigen::Matrix<local_scalar_t__, -1, 1>(n_trends);
       stan::math::fill(U, DUMMY_VAR__);
       
-      current_statement__ = 3;
+      current_statement__ = 4;
       U = in__.vector(n_trends);
       Eigen::Matrix<local_scalar_t__, -1, 1> A;
       A = Eigen::Matrix<local_scalar_t__, -1, 1>(n_A);
       stan::math::fill(A, DUMMY_VAR__);
       
-      current_statement__ = 4;
+      current_statement__ = 5;
       A = in__.vector(n_A);
       std::vector<local_scalar_t__> sigma_process;
       sigma_process = std::vector<local_scalar_t__>(S, DUMMY_VAR__);
       
-      current_statement__ = 5;
+      current_statement__ = 6;
       for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
-        current_statement__ = 5;
+        current_statement__ = 6;
         assign(sigma_process, cons_list(index_uni(sym1__), nil_index_list()),
           in__.scalar(), "assigning variable sigma_process");}
-      current_statement__ = 5;
+      current_statement__ = 6;
       for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
-        current_statement__ = 5;
+        current_statement__ = 6;
         if (jacobian__) {
-          current_statement__ = 5;
+          current_statement__ = 6;
           assign(sigma_process,
             cons_list(index_uni(sym1__), nil_index_list()),
             stan::math::lb_constrain(sigma_process[(sym1__ - 1)], 0, lp__),
             "assigning variable sigma_process");
         } else {
-          current_statement__ = 5;
+          current_statement__ = 6;
           assign(sigma_process,
             cons_list(index_uni(sym1__), nil_index_list()),
             stan::math::lb_constrain(sigma_process[(sym1__ - 1)], 0),
@@ -568,21 +612,21 @@ public:
       std::vector<local_scalar_t__> sigma_obs;
       sigma_obs = std::vector<local_scalar_t__>(n_obsvar, DUMMY_VAR__);
       
-      current_statement__ = 6;
+      current_statement__ = 7;
       for (int sym1__ = 1; sym1__ <= n_obsvar; ++sym1__) {
-        current_statement__ = 6;
+        current_statement__ = 7;
         assign(sigma_obs, cons_list(index_uni(sym1__), nil_index_list()),
           in__.scalar(), "assigning variable sigma_obs");}
-      current_statement__ = 6;
+      current_statement__ = 7;
       for (int sym1__ = 1; sym1__ <= n_obsvar; ++sym1__) {
-        current_statement__ = 6;
+        current_statement__ = 7;
         if (jacobian__) {
-          current_statement__ = 6;
+          current_statement__ = 7;
           assign(sigma_obs, cons_list(index_uni(sym1__), nil_index_list()),
             stan::math::lb_constrain(sigma_obs[(sym1__ - 1)], 0, lp__),
             "assigning variable sigma_obs");
         } else {
-          current_statement__ = 6;
+          current_statement__ = 7;
           assign(sigma_obs, cons_list(index_uni(sym1__), nil_index_list()),
             stan::math::lb_constrain(sigma_obs[(sym1__ - 1)], 0),
             "assigning variable sigma_obs");
@@ -603,32 +647,32 @@ public:
       Avec = Eigen::Matrix<local_scalar_t__, -1, 1>(M);
       stan::math::fill(Avec, DUMMY_VAR__);
       
-      current_statement__ = 12;
+      current_statement__ = 13;
       for (int i = 1; i <= M; ++i) {
-        current_statement__ = 11;
+        current_statement__ = 12;
         assign(Avec, cons_list(index_uni(i), nil_index_list()), 0,
           "assigning variable Avec");}
-      current_statement__ = 14;
+      current_statement__ = 15;
       for (int i = 1; i <= n_A; ++i) {
-        current_statement__ = 13;
+        current_statement__ = 14;
         assign(Avec, cons_list(index_uni(est_A[(i - 1)]), nil_index_list()),
           A[(i - 1)], "assigning variable Avec");}
-      current_statement__ = 17;
+      current_statement__ = 18;
       for (int i = 1; i <= S; ++i) {
-        current_statement__ = 15;
+        current_statement__ = 16;
         assign(Uvec, cons_list(index_uni(i), nil_index_list()),
           U[(trends[(i - 1)] - 1)], "assigning variable Uvec");}
-      current_statement__ = 20;
+      current_statement__ = 21;
       for (int s = 1; s <= S; ++s) {
-        current_statement__ = 18;
+        current_statement__ = 19;
         assign(x,
           cons_list(index_uni(1), cons_list(index_uni(s), nil_index_list())),
           x0[(s - 1)], "assigning variable x");}
-      current_statement__ = 25;
+      current_statement__ = 26;
       for (int t = 2; t <= N; ++t) {
-        current_statement__ = 23;
+        current_statement__ = 24;
         for (int s = 1; s <= S; ++s) {
-          current_statement__ = 21;
+          current_statement__ = 22;
           assign(x,
             cons_list(index_uni(t),
               cons_list(index_uni(s), nil_index_list())),
@@ -636,37 +680,49 @@ public:
               (pro_dev[((t - 1) - 1)][(s - 1)] *
                 sigma_process[(proVariances[(s - 1)] - 1)])),
             "assigning variable x");}}
-      current_statement__ = 30;
+      current_statement__ = 31;
       for (int m = 1; m <= M; ++m) {
-        current_statement__ = 28;
+        current_statement__ = 29;
         for (int t = 1; t <= N; ++t) {
-          current_statement__ = 26;
+          current_statement__ = 27;
           assign(pred,
             cons_list(index_uni(t),
               cons_list(index_uni(m), nil_index_list())),
             (x[(t - 1)][(states[(m - 1)] - 1)] + Avec[(m - 1)]),
             "assigning variable pred");}}
       {
-        current_statement__ = 33;
+        current_statement__ = 34;
         for (int i = 1; i <= n_obsvar; ++i) {
-          current_statement__ = 31;
+          current_statement__ = 32;
           lp_accum__.add(normal_lpdf<propto__>(sigma_obs[(i - 1)], 0, 1));}
-        current_statement__ = 36;
+        current_statement__ = 37;
         for (int s = 1; s <= n_provar; ++s) {
-          current_statement__ = 34;
+          current_statement__ = 35;
           lp_accum__.add(normal_lpdf<propto__>(sigma_process[(s - 1)], 0, 1));
         }
-        current_statement__ = 39;
+        current_statement__ = 40;
         for (int i = 1; i <= n_trends; ++i) {
-          current_statement__ = 37;
+          current_statement__ = 38;
           lp_accum__.add(normal_lpdf<propto__>(U[(i - 1)], 0, 0.1));}
-        current_statement__ = 42;
-        for (int s = 1; s <= S; ++s) {
-          current_statement__ = 40;
-          lp_accum__.add(normal_lpdf<propto__>(pro_dev[(s - 1)], 0, 1));}
-        current_statement__ = 45;
-        for (int i = 1; i <= n_pos; ++i) {
+        current_statement__ = 50;
+        if (logical_eq(est_nu, 1)) {
+          current_statement__ = 45;
+          lp_accum__.add(gamma_lpdf<propto__>(nu[(1 - 1)], 2, 0.1));
+          current_statement__ = 48;
+          for (int s = 1; s <= S; ++s) {
+            current_statement__ = 46;
+            lp_accum__.add(
+              student_t_lpdf<propto__>(pro_dev[(s - 1)], nu[(1 - 1)], 0, 1));
+          }
+        } else {
           current_statement__ = 43;
+          for (int s = 1; s <= S; ++s) {
+            current_statement__ = 41;
+            lp_accum__.add(normal_lpdf<propto__>(pro_dev[(s - 1)], 0, 1));}
+        }
+        current_statement__ = 53;
+        for (int i = 1; i <= n_pos; ++i) {
+          current_statement__ = 51;
           lp_accum__.add(
             normal_lpdf<propto__>(y[(i - 1)],
               pred[(col_indx_pos[(i - 1)] - 1)][(row_indx_pos[(i - 1)] - 1)],
@@ -706,20 +762,32 @@ public:
       
       current_statement__ = 1;
       x0 = in__.vector(S);
+      Eigen::Matrix<double, -1, 1> nu;
+      nu = Eigen::Matrix<double, -1, 1>(est_nu);
+      stan::math::fill(nu, std::numeric_limits<double>::quiet_NaN());
+      
+      current_statement__ = 2;
+      nu = in__.vector(est_nu);
+      current_statement__ = 2;
+      for (int sym1__ = 1; sym1__ <= est_nu; ++sym1__) {
+        current_statement__ = 2;
+        assign(nu, cons_list(index_uni(sym1__), nil_index_list()),
+          stan::math::lb_constrain(nu[(sym1__ - 1)], 2),
+          "assigning variable nu");}
       std::vector<Eigen::Matrix<double, -1, 1>> pro_dev;
       pro_dev = std::vector<Eigen::Matrix<double, -1, 1>>(pro_dev_1dim__, Eigen::Matrix<double, -1, 1>(S));
       stan::math::fill(pro_dev, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 2;
+      current_statement__ = 3;
       for (int sym1__ = 1; sym1__ <= pro_dev_1dim__; ++sym1__) {
-        current_statement__ = 2;
+        current_statement__ = 3;
         assign(pro_dev, cons_list(index_uni(sym1__), nil_index_list()),
           in__.vector(S), "assigning variable pro_dev");}
-      current_statement__ = 2;
+      current_statement__ = 3;
       for (int sym1__ = 1; sym1__ <= pro_dev_1dim__; ++sym1__) {
-        current_statement__ = 2;
+        current_statement__ = 3;
         for (int sym2__ = 1; sym2__ <= S; ++sym2__) {
-          current_statement__ = 2;
+          current_statement__ = 3;
           assign(pro_dev,
             cons_list(index_uni(sym1__),
               cons_list(index_uni(sym2__), nil_index_list())),
@@ -729,39 +797,39 @@ public:
       U = Eigen::Matrix<double, -1, 1>(n_trends);
       stan::math::fill(U, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 3;
+      current_statement__ = 4;
       U = in__.vector(n_trends);
       Eigen::Matrix<double, -1, 1> A;
       A = Eigen::Matrix<double, -1, 1>(n_A);
       stan::math::fill(A, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 4;
+      current_statement__ = 5;
       A = in__.vector(n_A);
       std::vector<double> sigma_process;
       sigma_process = std::vector<double>(S, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 5;
+      current_statement__ = 6;
       for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
-        current_statement__ = 5;
+        current_statement__ = 6;
         assign(sigma_process, cons_list(index_uni(sym1__), nil_index_list()),
           in__.scalar(), "assigning variable sigma_process");}
-      current_statement__ = 5;
+      current_statement__ = 6;
       for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
-        current_statement__ = 5;
+        current_statement__ = 6;
         assign(sigma_process, cons_list(index_uni(sym1__), nil_index_list()),
           stan::math::lb_constrain(sigma_process[(sym1__ - 1)], 0),
           "assigning variable sigma_process");}
       std::vector<double> sigma_obs;
       sigma_obs = std::vector<double>(n_obsvar, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 6;
+      current_statement__ = 7;
       for (int sym1__ = 1; sym1__ <= n_obsvar; ++sym1__) {
-        current_statement__ = 6;
+        current_statement__ = 7;
         assign(sigma_obs, cons_list(index_uni(sym1__), nil_index_list()),
           in__.scalar(), "assigning variable sigma_obs");}
-      current_statement__ = 6;
+      current_statement__ = 7;
       for (int sym1__ = 1; sym1__ <= n_obsvar; ++sym1__) {
-        current_statement__ = 6;
+        current_statement__ = 7;
         assign(sigma_obs, cons_list(index_uni(sym1__), nil_index_list()),
           stan::math::lb_constrain(sigma_obs[(sym1__ - 1)], 0),
           "assigning variable sigma_obs");}
@@ -783,6 +851,8 @@ public:
       
       for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
         vars__.emplace_back(x0[(sym1__ - 1)]);}
+      for (int sym1__ = 1; sym1__ <= est_nu; ++sym1__) {
+        vars__.emplace_back(nu[(sym1__ - 1)]);}
       for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
         for (int sym2__ = 1; sym2__ <= pro_dev_1dim__; ++sym2__) {
           vars__.emplace_back(pro_dev[(sym2__ - 1)][(sym1__ - 1)]);}}
@@ -798,32 +868,32 @@ public:
             primitive_value(emit_generated_quantities__)))) {
         return ;
       } 
-      current_statement__ = 12;
+      current_statement__ = 13;
       for (int i = 1; i <= M; ++i) {
-        current_statement__ = 11;
+        current_statement__ = 12;
         assign(Avec, cons_list(index_uni(i), nil_index_list()), 0,
           "assigning variable Avec");}
-      current_statement__ = 14;
+      current_statement__ = 15;
       for (int i = 1; i <= n_A; ++i) {
-        current_statement__ = 13;
+        current_statement__ = 14;
         assign(Avec, cons_list(index_uni(est_A[(i - 1)]), nil_index_list()),
           A[(i - 1)], "assigning variable Avec");}
-      current_statement__ = 17;
+      current_statement__ = 18;
       for (int i = 1; i <= S; ++i) {
-        current_statement__ = 15;
+        current_statement__ = 16;
         assign(Uvec, cons_list(index_uni(i), nil_index_list()),
           U[(trends[(i - 1)] - 1)], "assigning variable Uvec");}
-      current_statement__ = 20;
+      current_statement__ = 21;
       for (int s = 1; s <= S; ++s) {
-        current_statement__ = 18;
+        current_statement__ = 19;
         assign(x,
           cons_list(index_uni(1), cons_list(index_uni(s), nil_index_list())),
           x0[(s - 1)], "assigning variable x");}
-      current_statement__ = 25;
+      current_statement__ = 26;
       for (int t = 2; t <= N; ++t) {
-        current_statement__ = 23;
+        current_statement__ = 24;
         for (int s = 1; s <= S; ++s) {
-          current_statement__ = 21;
+          current_statement__ = 22;
           assign(x,
             cons_list(index_uni(t),
               cons_list(index_uni(s), nil_index_list())),
@@ -831,11 +901,11 @@ public:
               (pro_dev[((t - 1) - 1)][(s - 1)] *
                 sigma_process[(proVariances[(s - 1)] - 1)])),
             "assigning variable x");}}
-      current_statement__ = 30;
+      current_statement__ = 31;
       for (int m = 1; m <= M; ++m) {
-        current_statement__ = 28;
+        current_statement__ = 29;
         for (int t = 1; t <= N; ++t) {
-          current_statement__ = 26;
+          current_statement__ = 27;
           assign(pred,
             cons_list(index_uni(t),
               cons_list(index_uni(m), nil_index_list())),
@@ -895,38 +965,67 @@ public:
           current_statement__ = 1;
           pos__ = (pos__ + 1);}
       }
+      Eigen::Matrix<double, -1, 1> nu;
+      nu = Eigen::Matrix<double, -1, 1>(est_nu);
+      stan::math::fill(nu, std::numeric_limits<double>::quiet_NaN());
+      
+      {
+        std::vector<local_scalar_t__> nu_flat__;
+        current_statement__ = 2;
+        assign(nu_flat__, nil_index_list(), context__.vals_r("nu"),
+          "assigning variable nu_flat__");
+        current_statement__ = 2;
+        pos__ = 1;
+        current_statement__ = 2;
+        for (int sym1__ = 1; sym1__ <= est_nu; ++sym1__) {
+          current_statement__ = 2;
+          assign(nu, cons_list(index_uni(sym1__), nil_index_list()),
+            nu_flat__[(pos__ - 1)], "assigning variable nu");
+          current_statement__ = 2;
+          pos__ = (pos__ + 1);}
+      }
+      Eigen::Matrix<double, -1, 1> nu_free__;
+      nu_free__ = Eigen::Matrix<double, -1, 1>(est_nu);
+      stan::math::fill(nu_free__, std::numeric_limits<double>::quiet_NaN());
+      
+      current_statement__ = 2;
+      for (int sym1__ = 1; sym1__ <= est_nu; ++sym1__) {
+        current_statement__ = 2;
+        assign(nu_free__, cons_list(index_uni(sym1__), nil_index_list()),
+          stan::math::lb_free(nu[(sym1__ - 1)], 2),
+          "assigning variable nu_free__");}
       std::vector<Eigen::Matrix<double, -1, 1>> pro_dev;
       pro_dev = std::vector<Eigen::Matrix<double, -1, 1>>(pro_dev_1dim__, Eigen::Matrix<double, -1, 1>(S));
       stan::math::fill(pro_dev, std::numeric_limits<double>::quiet_NaN());
       
       {
         std::vector<local_scalar_t__> pro_dev_flat__;
-        current_statement__ = 2;
+        current_statement__ = 3;
         assign(pro_dev_flat__, nil_index_list(), context__.vals_r("pro_dev"),
           "assigning variable pro_dev_flat__");
-        current_statement__ = 2;
+        current_statement__ = 3;
         pos__ = 1;
-        current_statement__ = 2;
+        current_statement__ = 3;
         for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
-          current_statement__ = 2;
+          current_statement__ = 3;
           for (int sym2__ = 1; sym2__ <= pro_dev_1dim__; ++sym2__) {
-            current_statement__ = 2;
+            current_statement__ = 3;
             assign(pro_dev,
               cons_list(index_uni(sym2__),
                 cons_list(index_uni(sym1__), nil_index_list())),
               pro_dev_flat__[(pos__ - 1)], "assigning variable pro_dev");
-            current_statement__ = 2;
+            current_statement__ = 3;
             pos__ = (pos__ + 1);}}
       }
       std::vector<Eigen::Matrix<double, -1, 1>> pro_dev_free__;
       pro_dev_free__ = std::vector<Eigen::Matrix<double, -1, 1>>(pro_dev_1dim__, Eigen::Matrix<double, -1, 1>(S));
       stan::math::fill(pro_dev_free__, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 2;
+      current_statement__ = 3;
       for (int sym1__ = 1; sym1__ <= pro_dev_1dim__; ++sym1__) {
-        current_statement__ = 2;
+        current_statement__ = 3;
         for (int sym2__ = 1; sym2__ <= S; ++sym2__) {
-          current_statement__ = 2;
+          current_statement__ = 3;
           assign(pro_dev_free__,
             cons_list(index_uni(sym1__),
               cons_list(index_uni(sym2__), nil_index_list())),
@@ -938,17 +1037,17 @@ public:
       
       {
         std::vector<local_scalar_t__> U_flat__;
-        current_statement__ = 3;
+        current_statement__ = 4;
         assign(U_flat__, nil_index_list(), context__.vals_r("U"),
           "assigning variable U_flat__");
-        current_statement__ = 3;
+        current_statement__ = 4;
         pos__ = 1;
-        current_statement__ = 3;
+        current_statement__ = 4;
         for (int sym1__ = 1; sym1__ <= n_trends; ++sym1__) {
-          current_statement__ = 3;
+          current_statement__ = 4;
           assign(U, cons_list(index_uni(sym1__), nil_index_list()),
             U_flat__[(pos__ - 1)], "assigning variable U");
-          current_statement__ = 3;
+          current_statement__ = 4;
           pos__ = (pos__ + 1);}
       }
       Eigen::Matrix<double, -1, 1> A;
@@ -957,31 +1056,31 @@ public:
       
       {
         std::vector<local_scalar_t__> A_flat__;
-        current_statement__ = 4;
+        current_statement__ = 5;
         assign(A_flat__, nil_index_list(), context__.vals_r("A"),
           "assigning variable A_flat__");
-        current_statement__ = 4;
+        current_statement__ = 5;
         pos__ = 1;
-        current_statement__ = 4;
+        current_statement__ = 5;
         for (int sym1__ = 1; sym1__ <= n_A; ++sym1__) {
-          current_statement__ = 4;
+          current_statement__ = 5;
           assign(A, cons_list(index_uni(sym1__), nil_index_list()),
             A_flat__[(pos__ - 1)], "assigning variable A");
-          current_statement__ = 4;
+          current_statement__ = 5;
           pos__ = (pos__ + 1);}
       }
       std::vector<double> sigma_process;
       sigma_process = std::vector<double>(S, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 5;
+      current_statement__ = 6;
       assign(sigma_process, nil_index_list(),
         context__.vals_r("sigma_process"), "assigning variable sigma_process");
       std::vector<double> sigma_process_free__;
       sigma_process_free__ = std::vector<double>(S, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 5;
+      current_statement__ = 6;
       for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
-        current_statement__ = 5;
+        current_statement__ = 6;
         assign(sigma_process_free__,
           cons_list(index_uni(sym1__), nil_index_list()),
           stan::math::lb_free(sigma_process[(sym1__ - 1)], 0),
@@ -989,21 +1088,23 @@ public:
       std::vector<double> sigma_obs;
       sigma_obs = std::vector<double>(n_obsvar, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 6;
+      current_statement__ = 7;
       assign(sigma_obs, nil_index_list(), context__.vals_r("sigma_obs"),
         "assigning variable sigma_obs");
       std::vector<double> sigma_obs_free__;
       sigma_obs_free__ = std::vector<double>(n_obsvar, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 6;
+      current_statement__ = 7;
       for (int sym1__ = 1; sym1__ <= n_obsvar; ++sym1__) {
-        current_statement__ = 6;
+        current_statement__ = 7;
         assign(sigma_obs_free__,
           cons_list(index_uni(sym1__), nil_index_list()),
           stan::math::lb_free(sigma_obs[(sym1__ - 1)], 0),
           "assigning variable sigma_obs_free__");}
       for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
         vars__.emplace_back(x0[(sym1__ - 1)]);}
+      for (int sym1__ = 1; sym1__ <= est_nu; ++sym1__) {
+        vars__.emplace_back(nu_free__[(sym1__ - 1)]);}
       for (int sym1__ = 1; sym1__ <= pro_dev_1dim__; ++sym1__) {
         for (int sym2__ = 1; sym2__ <= S; ++sym2__) {
           vars__.emplace_back(pro_dev_free__[(sym1__ - 1)][(sym2__ - 1)]);}}
@@ -1026,6 +1127,7 @@ public:
     
     names__.clear();
     names__.emplace_back("x0");
+    names__.emplace_back("nu");
     names__.emplace_back("pro_dev");
     names__.emplace_back("U");
     names__.emplace_back("A");
@@ -1040,6 +1142,8 @@ public:
   inline void get_dims(std::vector<std::vector<size_t>>& dimss__) const {
     dimss__.clear();
     dimss__.emplace_back(std::vector<size_t>{static_cast<size_t>(S)});
+    
+    dimss__.emplace_back(std::vector<size_t>{static_cast<size_t>(est_nu)});
     
     dimss__.emplace_back(std::vector<size_t>{
                                              static_cast<size_t>(pro_dev_1dim__)
@@ -1074,6 +1178,10 @@ public:
     for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
       {
         param_names__.emplace_back(std::string() + "x0" + '.' + std::to_string(sym1__));
+      }}
+    for (int sym1__ = 1; sym1__ <= est_nu; ++sym1__) {
+      {
+        param_names__.emplace_back(std::string() + "nu" + '.' + std::to_string(sym1__));
       }}
     for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
       {
@@ -1139,6 +1247,10 @@ public:
       {
         param_names__.emplace_back(std::string() + "x0" + '.' + std::to_string(sym1__));
       }}
+    for (int sym1__ = 1; sym1__ <= est_nu; ++sym1__) {
+      {
+        param_names__.emplace_back(std::string() + "nu" + '.' + std::to_string(sym1__));
+      }}
     for (int sym1__ = 1; sym1__ <= S; ++sym1__) {
       {
         for (int sym2__ = 1; sym2__ <= pro_dev_1dim__; ++sym2__) {
@@ -1195,13 +1307,13 @@ public:
     
   inline std::string get_constrained_sizedtypes() const {
     stringstream s__;
-    s__ << "[{\"name\":\"x0\",\"type\":{\"name\":\"vector\",\"length\":" << S << "},\"block\":\"parameters\"},{\"name\":\"pro_dev\",\"type\":{\"name\":\"array\",\"length\":" << pro_dev_1dim__ << ",\"element_type\":{\"name\":\"vector\",\"length\":" << S << "}},\"block\":\"parameters\"},{\"name\":\"U\",\"type\":{\"name\":\"vector\",\"length\":" << n_trends << "},\"block\":\"parameters\"},{\"name\":\"A\",\"type\":{\"name\":\"vector\",\"length\":" << n_A << "},\"block\":\"parameters\"},{\"name\":\"sigma_process\",\"type\":{\"name\":\"array\",\"length\":" << S << ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"sigma_obs\",\"type\":{\"name\":\"array\",\"length\":" << n_obsvar << ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"pred\",\"type\":{\"name\":\"array\",\"length\":" << N << ",\"element_type\":{\"name\":\"vector\",\"length\":" << M << "}},\"block\":\"transformed_parameters\"},{\"name\":\"x\",\"type\":{\"name\":\"array\",\"length\":" << N << ",\"element_type\":{\"name\":\"vector\",\"length\":" << S << "}},\"block\":\"transformed_parameters\"},{\"name\":\"Uvec\",\"type\":{\"name\":\"vector\",\"length\":" << S << "},\"block\":\"transformed_parameters\"},{\"name\":\"Avec\",\"type\":{\"name\":\"vector\",\"length\":" << M << "},\"block\":\"transformed_parameters\"}]";
+    s__ << "[{\"name\":\"x0\",\"type\":{\"name\":\"vector\",\"length\":" << S << "},\"block\":\"parameters\"},{\"name\":\"nu\",\"type\":{\"name\":\"vector\",\"length\":" << est_nu << "},\"block\":\"parameters\"},{\"name\":\"pro_dev\",\"type\":{\"name\":\"array\",\"length\":" << pro_dev_1dim__ << ",\"element_type\":{\"name\":\"vector\",\"length\":" << S << "}},\"block\":\"parameters\"},{\"name\":\"U\",\"type\":{\"name\":\"vector\",\"length\":" << n_trends << "},\"block\":\"parameters\"},{\"name\":\"A\",\"type\":{\"name\":\"vector\",\"length\":" << n_A << "},\"block\":\"parameters\"},{\"name\":\"sigma_process\",\"type\":{\"name\":\"array\",\"length\":" << S << ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"sigma_obs\",\"type\":{\"name\":\"array\",\"length\":" << n_obsvar << ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"pred\",\"type\":{\"name\":\"array\",\"length\":" << N << ",\"element_type\":{\"name\":\"vector\",\"length\":" << M << "}},\"block\":\"transformed_parameters\"},{\"name\":\"x\",\"type\":{\"name\":\"array\",\"length\":" << N << ",\"element_type\":{\"name\":\"vector\",\"length\":" << S << "}},\"block\":\"transformed_parameters\"},{\"name\":\"Uvec\",\"type\":{\"name\":\"vector\",\"length\":" << S << "},\"block\":\"transformed_parameters\"},{\"name\":\"Avec\",\"type\":{\"name\":\"vector\",\"length\":" << M << "},\"block\":\"transformed_parameters\"}]";
     return s__.str();
     } // get_constrained_sizedtypes() 
     
   inline std::string get_unconstrained_sizedtypes() const {
     stringstream s__;
-    s__ << "[{\"name\":\"x0\",\"type\":{\"name\":\"vector\",\"length\":" << S << "},\"block\":\"parameters\"},{\"name\":\"pro_dev\",\"type\":{\"name\":\"array\",\"length\":" << pro_dev_1dim__ << ",\"element_type\":{\"name\":\"vector\",\"length\":" << S << "}},\"block\":\"parameters\"},{\"name\":\"U\",\"type\":{\"name\":\"vector\",\"length\":" << n_trends << "},\"block\":\"parameters\"},{\"name\":\"A\",\"type\":{\"name\":\"vector\",\"length\":" << n_A << "},\"block\":\"parameters\"},{\"name\":\"sigma_process\",\"type\":{\"name\":\"array\",\"length\":" << S << ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"sigma_obs\",\"type\":{\"name\":\"array\",\"length\":" << n_obsvar << ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"pred\",\"type\":{\"name\":\"array\",\"length\":" << N << ",\"element_type\":{\"name\":\"vector\",\"length\":" << M << "}},\"block\":\"transformed_parameters\"},{\"name\":\"x\",\"type\":{\"name\":\"array\",\"length\":" << N << ",\"element_type\":{\"name\":\"vector\",\"length\":" << S << "}},\"block\":\"transformed_parameters\"},{\"name\":\"Uvec\",\"type\":{\"name\":\"vector\",\"length\":" << S << "},\"block\":\"transformed_parameters\"},{\"name\":\"Avec\",\"type\":{\"name\":\"vector\",\"length\":" << M << "},\"block\":\"transformed_parameters\"}]";
+    s__ << "[{\"name\":\"x0\",\"type\":{\"name\":\"vector\",\"length\":" << S << "},\"block\":\"parameters\"},{\"name\":\"nu\",\"type\":{\"name\":\"vector\",\"length\":" << est_nu << "},\"block\":\"parameters\"},{\"name\":\"pro_dev\",\"type\":{\"name\":\"array\",\"length\":" << pro_dev_1dim__ << ",\"element_type\":{\"name\":\"vector\",\"length\":" << S << "}},\"block\":\"parameters\"},{\"name\":\"U\",\"type\":{\"name\":\"vector\",\"length\":" << n_trends << "},\"block\":\"parameters\"},{\"name\":\"A\",\"type\":{\"name\":\"vector\",\"length\":" << n_A << "},\"block\":\"parameters\"},{\"name\":\"sigma_process\",\"type\":{\"name\":\"array\",\"length\":" << S << ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"sigma_obs\",\"type\":{\"name\":\"array\",\"length\":" << n_obsvar << ",\"element_type\":{\"name\":\"real\"}},\"block\":\"parameters\"},{\"name\":\"pred\",\"type\":{\"name\":\"array\",\"length\":" << N << ",\"element_type\":{\"name\":\"vector\",\"length\":" << M << "}},\"block\":\"transformed_parameters\"},{\"name\":\"x\",\"type\":{\"name\":\"array\",\"length\":" << N << ",\"element_type\":{\"name\":\"vector\",\"length\":" << S << "}},\"block\":\"transformed_parameters\"},{\"name\":\"Uvec\",\"type\":{\"name\":\"vector\",\"length\":" << S << "},\"block\":\"transformed_parameters\"},{\"name\":\"Avec\",\"type\":{\"name\":\"vector\",\"length\":" << M << "},\"block\":\"transformed_parameters\"}]";
     return s__.str();
     } // get_unconstrained_sizedtypes() 
     

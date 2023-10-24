@@ -89,7 +89,7 @@ fit_stan <- function(y, x = NA,
                      "family"=1)
               
     #pars = c("pred", "log_lik","sigma_process","sigma_obs","x0")
-    pars = c("pred", "sigma_process","sigma_obs","x0")
+    pars = c("pred", "sigma_process","sigma_obs","x0", "log_lik")
     #if(marss$est_B) pars = c(pars, "B")
     pars = c(pars, "U")
     if(n_A > 0) pars = c(pars,"A")
