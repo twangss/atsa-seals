@@ -85,6 +85,7 @@ fit_stan <- function(y, x = NA,
                      "row_indx_pos" = row_indx_pos,
                      "est_A" = est_A,
                      "n_A" = n_A,
+                "est_nu" = est_nu,
                      "family"=1)
               
     #pars = c("pred", "log_lik","sigma_process","sigma_obs","x0")
@@ -92,7 +93,7 @@ fit_stan <- function(y, x = NA,
     #if(marss$est_B) pars = c(pars, "B")
     pars = c(pars, "U")
     if(n_A > 0) pars = c(pars,"A")
-    
+    if(est_nu) pars = c(pars,"nu")
     out <- rstan::sampling(
       object = object,
       data = data,

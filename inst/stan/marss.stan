@@ -15,6 +15,7 @@ data {
   //int<lower=0> est_trend; 
   //int<lower=0> est_B;
   int<lower=0> n_A;
+  int<lower=0> est_nu;
   int<lower=0> est_A[n_A+2];
   vector[n_pos] y; // data
   //int y_int[n_pos];
@@ -22,7 +23,8 @@ data {
 }
 parameters {
   vector[S] x0; // initial states
-  vector<lower=-3,upper=3>[S] pro_dev[N-1];
+  vector[est_nu] nu; // initial states
+  vector<lower=-4,upper=4>[S] pro_dev[N-1];
   //vector[n_trends * est_trend] U;
   vector[n_trends] U;
   //matrix[S*est_B,S*est_B] B;
@@ -93,9 +95,19 @@ model {
       U[i] ~ normal(0,0.1); // optional trends
     }
   //}
-  for(s in 1:S) {
-    pro_dev[s] ~ normal(0, 1); // process deviations
+
+  
+  if(est_nu ==1) {
+    for(s in 1:S) { // drawn from student-t distribution
+      pro_dev[s] ~ student_t(nu, 0, 1); // process deviations
+    }
+  } else {
+    for(s in 1:S) { // drawn from normal distribution
+      pro_dev[s] ~ normal(0, 1); // process deviations
+    }
   }
+  
+
   // if(est_B ==1) {
   //   for(i in 1:S) {
   //     for(j in 1:S) {
