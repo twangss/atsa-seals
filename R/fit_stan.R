@@ -18,11 +18,7 @@
 #' @importFrom rstan sampling
 #' @export
 #'
-fit_stan <- function(y, x = NA, model_name = NA,
-                     est_drift = FALSE,
-                     est_mean = FALSE,
-                     P = 1,
-                     Q = 1,
+fit_stan <- function(y, x = NA,
                      mcmc_list = list(n_mcmc = 1000, n_burn = 500, n_chain = 3, n_thin = 1),
                      family = "gaussian",
                      est_nu = FALSE,
@@ -45,123 +41,10 @@ fit_stan <- function(y, x = NA, model_name = NA,
       pos_indx <- c(pos_indx, 0, 0)
     }
 
-    if (length(pos_indx) != (length(y) + 2)) {
-      # include any other errors?
-      if (model_name %in% c("regression", "regression_cor", "ar", "rw", "ma", "arma11")) {
-        stop("Error: data cannot contain NAs for the specified model")
-      }
-    }
   }
 
   data <- NA
-  if (model_name == "regression") {
-    if (is.matrix(x) == FALSE) x <- matrix(x, ncol = 1)
-    object <- stanmodels$regression
-    data <- list("N" = length(y), "K" = dim(x)[2], "x" = x, "y" = y, "y_int" = round(y), "family" = family)
-    pars <- c("beta", "sigma", "pred", "log_lik")
-  }
-  if (model_name == "regression_cor") {
-    if (is.matrix(x) == FALSE) x <- matrix(x, ncol = 1)
-    object <- stanmodels$regression_cor
-    data <- list("N" = length(y), "K" = dim(x)[2], "x" = x, "y" = y, "y_int" = round(y), "family" = family)
-    pars <- c("beta", "sigma", "pred", "phi", "sigma_cor", "log_lik")
-  }
-  if (model_name == "rw") {
-    object <- stanmodels$rw
-    data <- list(
-      "y" = y, "N" = length(y), est_drift = ifelse(est_drift == FALSE, 0, 1),
-      est_nu = ifelse(est_nu == FALSE, 0, 1)
-    )
-    pars <- c("sigma", "pred")
-    if (est_drift == TRUE) pars <- c(pars, "mu")
-    if (est_nu == TRUE) pars <- c(pars, "nu")
-  }
-  if (model_name == "ar") {
-    object <- stanmodels$ar
-    data <- list(
-      "y" = y, "N" = length(y), est_drift = ifelse(est_drift == FALSE, 0, 1),
-      est_nu = ifelse(est_nu == FALSE, 0, 1)
-    )
-    pars <- c("sigma", "pred", "phi")
-    if (est_drift == TRUE) pars <- c(pars, "mu")
-    if (est_nu == TRUE) pars <- c(pars, "nu")
-  }
-  if (model_name == "ma" & Q == 1) {
-    object <- stanmodels$ma1
-    data <- list("y" = y, "N" = length(y), est_nu = ifelse(est_nu == FALSE, 0, 1))
-    pars <- c("sigma", "pred", "mu", "theta")
-    if (est_nu == TRUE) pars <- c(pars, "nu")
-  }
-  if (model_name == "ma" & Q > 1) {
-    object <- stanmodels$ma
-    data <- list("Q" = Q, "y" = y, "N" = length(y), est_nu = ifelse(est_nu == FALSE, 0, 1))
-    pars <- c("sigma", "pred", "mu", "theta")
-    if (est_nu == TRUE) pars <- c(pars, "nu")
-  }
-  if (model_name == "ss_rw") {
-    object <- stanmodels$ss_rw
-    data <- list(
-      "y" = y, "N" = N, "n_pos" = n_pos, "pos_indx" = pos_indx, "y_int" = round(y),
-      est_drift = ifelse(est_drift == FALSE, 0, 1),
-      "family" = family,
-      est_nu = ifelse(est_nu == FALSE, 0, 1)
-    )
-    pars <- c("sigma_process", "pred", "sigma_obs")
-    if (est_drift == TRUE) pars <- c(pars, "mu")
-    if (est_nu == TRUE) pars <- c(pars, "nu")
-  }
-  if (model_name == "ss_ar" & est_mean == FALSE) {
-    object <- stanmodels$ss_ar
-    data <- list(
-      "y" = y, "N" = N, "n_pos" = n_pos, "pos_indx" = pos_indx, "y_int" = round(y),
-      est_drift = ifelse(est_drift == FALSE, 0, 1),
-      "family" = family,
-      est_nu = ifelse(est_nu == FALSE, 0, 1)
-    )
-    pars <- c("sigma_process", "pred", "sigma_obs", "phi")
-    if (est_drift == TRUE) pars <- c(pars, "mu")
-    if (est_nu == TRUE) pars <- c(pars, "nu")
-  }
-  if (model_name == "ss_ar" & est_mean == TRUE) {
-    object <- stanmodels$ss_ar_mean
-    data <- list(
-      "y" = y, "N" = N, "n_pos" = n_pos, "pos_indx" = pos_indx, "y_int" = round(y),
-      "family" = family,
-      est_nu = ifelse(est_nu == FALSE, 0, 1)
-    )
-    pars <- c("sigma_process", "pred", "sigma_obs", "mu", "phi")
-    if (est_nu == TRUE) pars <- c(pars, "nu")
-  }
-  # if(model_name == "arma11") {
-  #   object <- stanmodels$arma11
-  #   data <- list("y"=y,"N"=length(y))
-  #   pars <- c("sigma", "theta", "mu", "phi")
-  # }
-  if (model_name == "dlm-intercept") {
-    object <- stanmodels$dlm_int
-    # constant slope, and time -varying intercept model
-    if (is.na(x)) {
-      x <- matrix(0, nrow = length(y), ncol = 1)
-    }
-    if (is.matrix(x) == FALSE) x <- matrix(x, ncol = 1)
-    data <- list("N" = N, "K" = dim(x)[2], "x" = x, "y" = y, "y_int" = round(y), "family" = family, "n_pos" = n_pos, "pos_indx" = pos_indx)
-    pars <- c("beta", "sigma_obs", "sigma_process", "pred", "intercept", "log_lik")
-  }
-  if (model_name == "dlm-slope") {
-    object <- stanmodels$dlm_slope
-    # constant estimated intercept, and time varying slopes
-    if (is.matrix(x) == FALSE) x <- matrix(x, ncol = 1)
-    data <- list("N" = N, "K" = dim(x)[2], "x" = x, "y" = y, "y_int" = round(y), "family" = family, "n_pos" = n_pos, "pos_indx" = pos_indx)
-    pars <- c("beta", "sigma_obs", "sigma_process", "pred", "log_lik")
-  }
-  if (model_name == "dlm") {
-    object <- stanmodels$dlm
-    # this is just a time-varying model with time varying intercept and slopes
-    if (is.matrix(x) == FALSE) x <- matrix(x, ncol = 1)
-    data <- list("N" = N, "K" = dim(x)[2], "x" = x, "y" = y, "y_int" = round(y), "family" = family, "n_pos" = n_pos, "pos_indx" = pos_indx)
-    pars <- c("beta", "sigma_obs", "sigma_process", "pred", "log_lik")
-  }
-  if (model_name == "marss") {
+  
     object <- stanmodels$marss
     if (is.null(marss$states)) marss$states <- rep(1, nrow(y))
     if(length(marss$states) != nrow(y)) stop("Error: state vector must be same length as number of time series in y")
@@ -173,10 +56,7 @@ fit_stan <- function(y, x = NA, model_name = NA,
     if (is.null(marss$trends)) marss$trends <- rep(1, max(marss$states))
     if(length(marss$trends) < max(marss$states)) stop("Error: vector of trends is fewer than the number of states")
     if(length(marss$trends) > max(marss$states)) stop("Error: vector of trends is larger than the number of states")
-    if (marss$est_trend == FALSE) est_trend = FALSE
-    if (marss$est_trend == TRUE) est_trend = TRUE
-    if (marss$est_B == FALSE) est_B = FALSE
-    if (marss$est_B == TRUE) est_B = TRUE
+
     proVariances <- c(marss$proVariances, 0) # to keep types in stan constant
     trends <- c(marss$trends, 0) # to keep types in stan constant
     N <- ncol(y)
@@ -192,8 +72,8 @@ fit_stan <- function(y, x = NA, model_name = NA,
       est_A[indx[1]] <- 0
     }
     est_A <- which(est_A > 0)
-    est_A <- c(est_A, 0)
-    n_A <- length(est_A) - 1
+    est_A <- c(est_A, 0, 0)
+    n_A <- length(est_A) - 2
     
     data = list("N"=N,"M"=M, "y"=y,
                      "states"=marss$states, "S" = max(marss$states), "obsVariances"=marss$obsVariances,
@@ -205,17 +85,14 @@ fit_stan <- function(y, x = NA, model_name = NA,
                      "row_indx_pos" = row_indx_pos,
                      "est_A" = est_A,
                      "n_A" = n_A,
-                     "y_int"=round(y),
-                     "family"=1,
-                     "est_trend" = as.numeric(est_trend),
-                     "est_B" = as.numeric(est_B))
+                     "family"=1)
               
-    pars = c("pred", "log_lik","sigma_process","sigma_obs","x0")
-    if(marss$est_B) pars = c(pars, "B")
-    if(marss$est_trend) pars = c(pars, "U")
+    #pars = c("pred", "log_lik","sigma_process","sigma_obs","x0")
+    pars = c("pred", "sigma_process","sigma_obs","x0")
+    #if(marss$est_B) pars = c(pars, "B")
+    pars = c(pars, "U")
     if(n_A > 0) pars = c(pars,"A")
-  }
-  if (map_estimation == FALSE) {
+    
     out <- rstan::sampling(
       object = object,
       data = data,
@@ -226,13 +103,6 @@ fit_stan <- function(y, x = NA, model_name = NA,
       thin = mcmc_list$n_thin,
       chains = mcmc_list$n_chain, ...
     )
-  } else {
-    out <- rstan::optimizing(
-      object = object,
-      data = data,
-      hessian = hessian, ...
-    )
-  }
-
   return(out)
+  #return(list(model = out, data = data, pars = pars))
 }
