@@ -18,7 +18,7 @@ data {
   int<lower=0> est_nu;
   int<lower=0> est_A[n_A+2];
   vector[n_pos] y; // data
-  //int y_int[n_pos];
+  int y_int[n_pos];
   int family; // 1 = normal, 2 = binomial, 3 = poisson, 4 = gamma, 5 = lognormal
 }
 parameters {
