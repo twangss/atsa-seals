@@ -18,7 +18,7 @@ data {
   int<lower=0> est_nu;
   int<lower=0> est_A[n_A+2];
   vector[n_pos] y; // data
-  int y_int[n_pos];
+  // int y_int[n_pos];
   int family; // 1 = normal, 2 = binomial, 3 = poisson, 4 = gamma, 5 = lognormal
 }
 parameters {
@@ -125,12 +125,12 @@ model {
   if(family == 1) {
     for(i in 1:n_pos) y[i] ~ normal(pred[col_indx_pos[i], row_indx_pos[i]], sigma_obs[obsVariances[row_indx_pos[i]]]);
   }
-  if(family == 2) {
-    for(i in 1:n_pos) y_int[i] ~ bernoulli_logit(pred[col_indx_pos[i], row_indx_pos[i]]);
-  }
-  if(family == 3) {
-    for(i in 1:n_pos) y_int[i] ~ poisson_log(pred[col_indx_pos[i], row_indx_pos[i]]);
-  }
+  //if(family == 2) {
+    //for(i in 1:n_pos) y_int[i] ~ bernoulli_logit(pred[col_indx_pos[i], row_indx_pos[i]]);
+  //}
+  // if(family == 3) {
+  //   for(i in 1:n_pos) y_int[i] ~ poisson_log(pred[col_indx_pos[i], row_indx_pos[i]]);
+  // }
   if(family == 4) {
     for(i in 1:n_pos) y[i] ~ gamma(sigma_obs[obsVariances[row_indx_pos[i]]], sigma_obs[obsVariances[row_indx_pos[i]]] ./ pred[col_indx_pos[i], row_indx_pos[i]]);
   }
