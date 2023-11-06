@@ -25,8 +25,8 @@ parameters {
   vector[S] x0; // initial states
   vector<lower=2>[est_nu] nu; // nu, constrainted to be > 2
   vector<lower=-3,upper=3>[S] pro_dev[N-1];
-  vector[n_trends * est_trend] U;
-  // vector[n_trends] U;
+  // vector[n_trends * est_trend] U;
+  vector[n_trends] U;
   //matrix[S*est_B,S*est_B] B;
   vector[n_A] A; // offsets
   real<lower=0> sigma_process[S];
