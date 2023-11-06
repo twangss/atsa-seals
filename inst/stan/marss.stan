@@ -66,10 +66,10 @@ transformed parameters {
     for(s in 1:S) {
     //x[t,] = Bmat * x[t-1,] + pro_dev[t-1,];
     //x[t,] = x[t-1,] + pro_dev[t-1,];
-    x[t,s] = x[t-1,s] + Uvec[s] + pro_dev[t-1,s] * sigma_process[proVariances[s]];
-    //if(est_trend == 1) {
-    //  x[t,] = x[t,] + Uvec;
-    //}
+    x[t,s] = x[t-1,s] + pro_dev[t-1,s] * sigma_process[proVariances[s]];
+    if(est_trend == 1) {
+     x[t,s] = x[t-1,s] + Uvec[s];
+    }
     }
   }
 
