@@ -12,7 +12,7 @@ data {
   int<lower=0> n_pos; // number of non-NA values
   int<lower=0> col_indx_pos[n_pos];
   int<lower=0> row_indx_pos[n_pos];
-  //int<lower=0> est_trend; 
+  int<lower=0> est_trend;
   //int<lower=0> est_B;
   int<lower=0> n_A;
   int<lower=0> est_nu;
@@ -25,8 +25,8 @@ parameters {
   vector[S] x0; // initial states
   vector<lower=2>[est_nu] nu; // nu, constrainted to be > 2
   vector<lower=-3,upper=3>[S] pro_dev[N-1];
-  //vector[n_trends * est_trend] U;
-  vector[n_trends] U;
+  vector[n_trends * est_trend] U;
+  // vector[n_trends] U;
   //matrix[S*est_B,S*est_B] B;
   vector[n_A] A; // offsets
   real<lower=0> sigma_process[S];
@@ -44,11 +44,11 @@ transformed parameters {
   for(i in 1:n_A) Avec[est_A[i]] = A[i];
   
   for(i in 1:S) {
-    //if(est_trend) {
+    if(est_trend) {
       Uvec[i] = U[trends[i]]; // map shared trends
-    //} else {
-    //  Uvec[i] = 0;
-    //}
+    } else {
+     Uvec[i] = 0;
+    }
   }
   // for(i in 1:S) {
   //   for(j in 1:S) {

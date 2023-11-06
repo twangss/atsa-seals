@@ -22,6 +22,7 @@ fit_stan <- function(y, x = NA,
                      mcmc_list = list(n_mcmc = 1000, n_burn = 500, n_chain = 3, n_thin = 1),
                      family = "gaussian",
                      est_nu = FALSE,
+                     est_trend = FALSE,
                      marss = list(states = NULL, obsVariances = NULL, proVariances = NULL, trends = NULL),
                      map_estimation = FALSE,
                      hessian = FALSE, ...) {
@@ -86,12 +87,13 @@ fit_stan <- function(y, x = NA,
                      "est_A" = est_A,
                      "n_A" = n_A,
                 "est_nu" = est_nu,
+                "est_trend" = est_trend,
                      "family"=1)
               
     #pars = c("pred", "log_lik","sigma_process","sigma_obs","x0")
     pars = c("pred", "sigma_process","sigma_obs","x0", "log_lik")
     #if(marss$est_B) pars = c(pars, "B")
-    pars = c(pars, "U")
+    if(est_trend) pars = c(pars, "U")
     if(n_A > 0) pars = c(pars,"A")
     if(est_nu) pars = c(pars,"nu")
     out <- rstan::sampling(
