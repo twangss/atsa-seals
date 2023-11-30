@@ -24,7 +24,8 @@ fit_stan <- function(y, x = NA,
                      est_nu = FALSE,
                      est_trend = FALSE,
                      est_sigma_process_prior = FALSE,
-                     marss = list(states = NULL, obsVariances = NULL, proVariances = NULL, trends = NULL),
+                     marss = list(states = NULL, obsVariances = NULL, proVariances = NULL, trends = NULL,
+                                  sigma_process_prior=NULL),
                      map_estimation = FALSE,
                      hessian = FALSE, ...) {
   dist <- c("gaussian", "binomial", "poisson", "gamma", "lognormal")
@@ -90,7 +91,7 @@ fit_stan <- function(y, x = NA,
                      "est_nu" = est_nu,
                      "est_trend" = est_trend,
                      "est_sigma_process_prior" = est_sigma_process_prior,
-                     "sigma_process_prior" = sigma_process_prior,
+                     "sigma_process_prior" = marss$sigma_process_prior,
                      "family"=1)
               
     #pars = c("pred", "log_lik","sigma_process","sigma_obs","x0")
