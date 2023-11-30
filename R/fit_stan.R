@@ -23,6 +23,7 @@ fit_stan <- function(y, x = NA,
                      family = "gaussian",
                      est_nu = FALSE,
                      est_trend = FALSE,
+                     est_sigma_process_prior = FALSE,
                      marss = list(states = NULL, obsVariances = NULL, proVariances = NULL, trends = NULL),
                      map_estimation = FALSE,
                      hessian = FALSE, ...) {
