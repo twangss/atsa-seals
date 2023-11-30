@@ -86,8 +86,10 @@ fit_stan <- function(y, x = NA,
                      "row_indx_pos" = row_indx_pos,
                      "est_A" = est_A,
                      "n_A" = n_A,
-                "est_nu" = est_nu,
-                "est_trend" = est_trend,
+                     "est_nu" = est_nu,
+                     "est_trend" = est_trend,
+                     "est_sigma_process_prior" = est_sigma_process_prior,
+                     "sigma_process_prior" = sigma_process_prior,
                      "family"=1)
               
     #pars = c("pred", "log_lik","sigma_process","sigma_obs","x0")
