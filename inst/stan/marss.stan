@@ -13,8 +13,8 @@ data {
   int<lower=0> col_indx_pos[n_pos];
   int<lower=0> row_indx_pos[n_pos];
   int<lower=0> est_trend;
-  int<lower=0> est_sigma_process_prior;
-  vector[n_provar] sigma_process_prior; // sigma process priors
+  // int<lower=0> est_sigma_process_prior;
+  // vector[n_provar] sigma_process_prior; // sigma process priors
   //int<lower=0> est_B;
   int<lower=0> n_A;
   int<lower=0> est_nu;
@@ -91,9 +91,9 @@ model {
   }
   for(s in 1:n_provar) {
     sigma_process[s] ~ normal(0,1);//student_t(5,0,0.1); // process var sigma
-    if(est_sigma_process_prior == 1){
-     sigma_process[s] ~ normal(sigma_process_prior[s],0.2);
-    }
+    //if(est_sigma_process_prior == 1){
+    //  sigma_process[s] ~ normal(sigma_process_prior[s],0.2);
+    // }
   }
   //if(est_trend==1){
     for(i in 1:n_trends) {
