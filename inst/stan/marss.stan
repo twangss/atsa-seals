@@ -104,12 +104,22 @@ model {
   
   if(est_nu ==1) {
     nu[1] ~ gamma(2, 0.1);
-    for(s in 1:S) { // drawn from student-t distribution
-      pro_dev[s] ~ student_t(nu[1], 0, 1); // process deviations
+    // for(s in 1:S) { // drawn from student-t distribution
+    //   pro_dev[s] ~ student_t(nu[1], 0, 1); // process deviations
+    // }
+  for(t in 1:(N-1)) {
+      for(s in 1:S) {
+        pro_dev[t,s] ~ student_t(nu[1], 0, 1);
+      }
     }
   } else {
-    for(s in 1:S) { // drawn from normal distribution
-      pro_dev[s] ~ normal(0, 1); // process deviations
+    // for(s in 1:S) { // drawn from normal distribution
+    //   pro_dev[s] ~ normal(0, 1); // process deviations
+    // }
+    for(t in 1:(N-1)) {
+      for(s in 1:S) {
+        pro_dev[t,s] ~ normal(0,1);
+      }
     }
   }
   
