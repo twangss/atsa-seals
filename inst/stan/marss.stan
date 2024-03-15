@@ -31,7 +31,7 @@ parameters {
   vector[n_trends] U;
   //matrix[S*est_B,S*est_B] B;
   vector[n_A] A; // offsets
-  real<lower=0> sigma_process[S];
+  real<lower=0> sigma_process[n_provar];
   real<lower=0> sigma_obs[n_obsvar];
 }
 transformed parameters {
